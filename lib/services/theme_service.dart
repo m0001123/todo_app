@@ -10,7 +10,6 @@ class ThemeService{
   void switchTheme(){
     Get.changeThemeMode( _loadThemeFromStorage()?ThemeMode.light:ThemeMode.dark);
     _box.write(_key, !_loadThemeFromStorage());
-    print(_box.read(_key));
   }
 
 }

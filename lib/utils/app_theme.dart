@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class AppTheme{
   //light theme color
-  static Color lightbackgroundColor =const Color(0xffEBECF2);
+  static Color lightbackgroundColor = Colors.grey.shade300;
   static Color appWhite = Colors.white;
   static Color appGrey = Colors.grey;
   static Color appblue = Colors.lightBlue;
@@ -21,14 +21,14 @@ class AppTheme{
     colorScheme: const ColorScheme.light().copyWith(
       primaryContainer: appWhite,
       primary: Colors.black,
-      onPrimary: Colors.black45,
-      secondary: Colors.black38,
+      onPrimary: Colors.black54,
+      secondary:  Colors.grey.shade100,
       onSecondary: Colors.black26,
     ),
     iconTheme: const IconThemeData(color: Colors.black),
     textTheme: const TextTheme(
       displayMedium: TextStyle(fontSize: 24,color: Colors.black),
-      displaySmall: TextStyle(fontSize: 18,color: Colors.black45),
+      displaySmall: TextStyle(fontSize: 18,color: Colors.black54),
     )
   );
 
@@ -40,7 +40,7 @@ class AppTheme{
       primaryContainer: appblack,
       primary: Colors.white,
       onPrimary: Colors.white70,
-      secondary: Colors.white60,
+      secondary:  Colors.grey.shade900,
       onSecondary: Colors.white54,
     )
 
