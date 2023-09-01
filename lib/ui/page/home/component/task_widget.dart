@@ -12,7 +12,7 @@ class TaskWidget extends StatelessWidget {
     required this.deletefn
   });
   String taskName;
-  bool done;
+  int done;
   Function() fn;
   Function(BuildContext)? deletefn;
   @override
@@ -41,7 +41,7 @@ class TaskWidget extends StatelessWidget {
                 flex: 1,
                 child: GestureDetector(
                   onTap: fn,
-                  child: done
+                  child: done==1
                       ?  Icon(
                     Icons.check_circle,
                     size: 30.sp,
@@ -63,7 +63,7 @@ class TaskWidget extends StatelessWidget {
                       fontSize: 18.sp,
                       fontWeight: FontWeight.normal,
                       height: 1.5,
-                      color: done ? Theme.of(context).colorScheme.onPrimary:Theme.of(context).colorScheme.primary
+                      color: done==1 ? Theme.of(context).colorScheme.onPrimary:Theme.of(context).colorScheme.primary
                     ),
                   )),
             ),

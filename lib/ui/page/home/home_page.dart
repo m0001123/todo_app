@@ -28,7 +28,8 @@ class HomePage extends StatelessWidget {
                   addfn: () {
                     if(_textfieldController.text.isNotEmpty){
                       homepageController.addTask(
-                          0, _textfieldController.text, false);
+                           _textfieldController.text, );
+                      homepageController.getTask();
                       _textfieldController.clear();
                     }
                   }),
@@ -135,13 +136,13 @@ class HomePage extends StatelessWidget {
                                         padding: EdgeInsets.only(top: 10.h),
                                         child: TaskWidget(
                                           taskName: e.value.taskName,
-                                          done: e.value.done,
+                                          done: e.value.isdone,
                                           fn: () =>
                                               homepageController.changeTaskDone(
-                                                  e.key, e.value.done),
+                                                  e.value),
                                           deletefn: (context) =>
                                               homepageController.removeTask(
-                                                  e.key, e.value.done),
+                                                  e.value),
                                         ),
                                       ))
                                   .toList()),
@@ -166,13 +167,13 @@ class HomePage extends StatelessWidget {
                                         padding: EdgeInsets.only(top: 10.h),
                                         child: TaskWidget(
                                           taskName: e.value.taskName,
-                                          done: e.value.done,
+                                          done: e.value.isdone,
                                           fn: () =>
                                               homepageController.changeTaskDone(
-                                                  e.key, e.value.done),
+                                                 e.value),
                                           deletefn: (context) =>
                                               homepageController.removeTask(
-                                                  e.key, e.value.done),
+                                                  e.value),
                                         ),
                                       ))
                                   .toList()),
