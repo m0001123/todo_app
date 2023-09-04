@@ -44,6 +44,7 @@ dependencies:
   sqflite: ^2.3.0
   google_fonts: ^5.1.0
   flutter_slidable: ^3.0.0
+  table_calendar: ^3.0.9
 dev_dependencies:
   flutter_test:
     sdk: flutter

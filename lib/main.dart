@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:intl/date_symbol_data_local.dart';
+import 'package:todo_app/controller/calendar_page_controller.dart';
 import 'package:todo_app/controller/home_page_controller.dart';
 import 'package:todo_app/services/db_service.dart';
 import 'package:todo_app/services/service.dart';
 import 'package:todo_app/services/theme_service.dart';
+import 'package:todo_app/ui/page/bottom_bar_frame.dart';
 import 'package:todo_app/ui/page/home/home_page.dart';
 import 'package:todo_app/utils/app_theme.dart';
 import 'package:get_storage/get_storage.dart';
@@ -16,7 +19,8 @@ void main() async {
   //notifyService.initalizeNotifyService();
   //notifyService.requestIOSPermissions();
   Get.lazyPut(() => HomePageController());
-  runApp(const MyApp());
+  Get.lazyPut(()=> CalendarPageController());
+  initializeDateFormatting().then((_) => runApp(MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -34,7 +38,7 @@ class MyApp extends StatelessWidget {
           theme: AppTheme.lightTheme,
           darkTheme: AppTheme.darkTheme,
           themeMode: ThemeService().theme,
-          home: HomePage(),
+          home: BottomBarFrame(),
         );
       },
     );

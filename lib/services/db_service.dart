@@ -24,9 +24,16 @@ class DBService {
       print(e);
     }
   }
-  static Future<List<Map<String,dynamic>>> query(String date)async{
+  static Future<List<Map<String,dynamic>>> queryDate(String date)async{
     return await _db!.query(_tableName,where: 'date = ? ',whereArgs: [date]);
   }
+
+  static Future<List> queryHaveTaskDate()async{
+    List s= await _db!.rawQuery("SELECT DISTINCT tasks.date FROM tasks");
+    print(s);
+    return s;
+  }
+
   static Future<TaskModel> insert(TaskModel task)async {
     print('insert fn');
     task.id = (await _db?.insert(_tableName, task.toJson()))!;

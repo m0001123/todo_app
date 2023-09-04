@@ -23,8 +23,9 @@ class TaskWidget extends StatelessWidget {
         children: [
           SlidableAction(
             onPressed: deletefn,
-            backgroundColor:Colors.red ,
+            backgroundColor:const Color(0xFFE14940) ,
             icon: Icons.delete_forever,
+            borderRadius: BorderRadius.circular(12.r),
           )
         ],
       ),

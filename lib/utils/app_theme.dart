@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 class AppTheme{
   //light theme color
-  static Color lightbackgroundColor = Colors.grey.shade300;
+  static Color lightbackgroundColor =  Color(0xFFE3E3F8);
   static Color appWhite = Colors.white;
-  static Color appGrey = Colors.grey;
-  static Color appblue = Colors.lightBlue;
+  static Color appyellow = Color(0xFFF89A3B);
+  static Color appblue = Color(0xFF8686F8);
 
   //dark theme color
   static Color darkbackgroundColor = Colors.black;
@@ -22,8 +22,8 @@ class AppTheme{
       primaryContainer: appWhite,
       primary: Colors.black,
       onPrimary: Colors.black54,
-      secondary:  Colors.grey.shade100,
-      onSecondary: Colors.black26,
+      secondary:  Color(0xFFF1F1F6),
+      onSecondary: appblue,
     ),
     iconTheme: const IconThemeData(color: Colors.black),
     textTheme: const TextTheme(
@@ -34,15 +34,15 @@ class AppTheme{
 
   static ThemeData darkTheme = ThemeData(
     brightness: Brightness.dark,
-    scaffoldBackgroundColor: darkbackgroundColor,
-    appBarTheme: AppBarTheme(backgroundColor: darkbackgroundColor,elevation: 0),
+    scaffoldBackgroundColor: Color(0xFF272744),
+    appBarTheme: AppBarTheme(backgroundColor: Color(0xFF272744),elevation: 0),
     colorScheme:  const ColorScheme.dark().copyWith(
       primaryContainer: appblack,
       primary: Colors.white,
       onPrimary: Colors.white70,
-      secondary:  Colors.grey.shade900,
-      onSecondary: Colors.white54,
-    )
+      secondary:  Color(0xFF39395E),
+      onSecondary: appyellow,
+    ),
 
   );
 

@@ -11,6 +11,10 @@ class AddTaskBottomSheet extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 220.h,
+      decoration: BoxDecoration(
+        color: Theme.of(context).scaffoldBackgroundColor,
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20.r))
+      ),
       padding: const EdgeInsets.only(top: 15, left: 20, right: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -38,7 +42,7 @@ class AddTaskBottomSheet extends StatelessWidget {
                 onPressed: addfn,
                 style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.all(10),
-                  backgroundColor: Colors.blue
+                  backgroundColor: Theme.of(context).colorScheme.onSecondary,
                 ),
                 child:  const Icon(Icons.done_rounded,size: 20,color: Colors.white,)
               ),
