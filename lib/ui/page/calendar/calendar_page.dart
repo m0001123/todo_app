@@ -20,11 +20,12 @@ class _CalendarPageState extends State<CalendarPage> {
   final _textfieldController = TextEditingController();
   void addtaskBottomSheet(BuildContext context) {
     showModalBottomSheet(
+        isScrollControlled: true,
         context: context,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(top: Radius.circular(20.r))),
         builder: (context) => Padding(
-          padding: MediaQuery.of(context).viewInsets,
+          padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
           child: AddTaskBottomSheet(
               controller: _textfieldController,
               addfn: () {
@@ -104,14 +105,12 @@ class _CalendarPageState extends State<CalendarPage> {
                           parent: AlwaysScrollableScrollPhysics()),
                       children: [
                         ExpansionTile(
-                            title: Text(
+                            title: const Text(
                               '未完成',
-                              style: GoogleFonts.notoSans(
-                                textStyle: TextStyle(
-                                  fontSize: 16.sp,
-                                  fontWeight: FontWeight.w500,
-                                  height: 1.5,
-                                ),
+                              style:  TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500,
+                                height: 1.5,
                               ),
                             ),
                             initiallyExpanded: true,
@@ -135,14 +134,12 @@ class _CalendarPageState extends State<CalendarPage> {
                                     ))
                                 .toList()),
                         ExpansionTile(
-                            title: Text(
+                            title: const Text(
                               '已完成',
-                              style: GoogleFonts.notoSans(
-                                textStyle: TextStyle(
-                                  fontSize: 16.sp,
-                                  fontWeight: FontWeight.w500,
-                                  height: 1.5,
-                                ),
+                              style:  TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500,
+                                height: 1.5,
                               ),
                             ),
                             initiallyExpanded: false,

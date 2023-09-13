@@ -7,6 +7,7 @@ class AddTaskFlatButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton(
+        heroTag: null,
         onPressed: onpress,
         backgroundColor: Theme.of(context).colorScheme.onSecondary,
         child: const Icon(

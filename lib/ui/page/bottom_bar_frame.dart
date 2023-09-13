@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:todo_app/ui/page/calendar/calendar_page.dart';
 import 'package:todo_app/ui/page/home/home_page.dart';
+import 'package:todo_app/ui/page/timing/timing_page.dart';
 import 'package:todo_app/utils/app_theme.dart';
 import 'package:get/get.dart';
 import '../../services/theme_service.dart';
@@ -14,11 +15,11 @@ class BottomBarFrame extends StatefulWidget {
 }
 
 class _BottomBarFrameState extends State<BottomBarFrame> {
-  int _seletbodyIndex = 1;
+  int _seletbodyIndex = 0;
   final List<Widget> bodyList = [
     HomePage(),
     CalendarPage(),
-    Container(),
+    TimingPage(),
   ];
 
   void _onBottomItemTap(int index) {
@@ -33,7 +34,7 @@ class _BottomBarFrameState extends State<BottomBarFrame> {
       appBar: AppBar(
         leading: Icon(
           Icons.menu,
-          size: 30.sp,
+          size: 30,
           color: Theme.of(context).iconTheme.color,
         ),
         actions: [
@@ -45,7 +46,7 @@ class _BottomBarFrameState extends State<BottomBarFrame> {
               },
               child: Icon(
                 Get.isDarkMode ? Icons.dark_mode : Icons.sunny,
-                size: 30.sp,
+                size: 30,
                 color: Theme.of(context).iconTheme.color,
               ),
             ),

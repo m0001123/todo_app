@@ -10,16 +10,16 @@ class AddTaskBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 220.h,
+      height: 230.h,
       decoration: BoxDecoration(
         color: Theme.of(context).scaffoldBackgroundColor,
         borderRadius: BorderRadius.vertical(top: Radius.circular(20.r))
       ),
-      padding: const EdgeInsets.only(top: 15, left: 20, right: 20),
+      padding:  EdgeInsets.only(top: 15.h, left: 20.w, right: 20.w),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('添加待辦',style: GoogleFonts.notoSans(textStyle: TextStyle(fontSize: 24.sp,fontWeight: FontWeight.bold)),),
+          const Text('添加待辦',style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold),),
           SizedBox(height: 15.h,),
           TextField(
             controller: controller,

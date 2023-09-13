@@ -15,11 +15,12 @@ class HomePage extends StatelessWidget {
   final _textfieldController = TextEditingController();
   void addtaskBottomSheet(BuildContext context) {
     showModalBottomSheet(
+        isScrollControlled: true,
         context: context,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(top: Radius.circular(20.r))),
         builder: (context) => Padding(
-              padding: MediaQuery.of(context).viewInsets,
+              padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
               child: AddTaskBottomSheet(
                   controller: _textfieldController,
                   addfn: () {
@@ -50,14 +51,13 @@ class HomePage extends StatelessWidget {
                   width: double.infinity,
                 ),
                 Text('Today',
-                    style: GoogleFonts.acme(
-                        fontSize: 30.sp,
+                    style: TextStyle(fontSize: 30,
                         color: Theme.of(context).colorScheme.primary,
                         fontWeight: FontWeight.bold)),
                 Text(
                   DateFormat.EEEE().format(DateTime.now()),
                   style: GoogleFonts.acme(
-                      fontSize: 18.sp,
+                      fontSize: 18,
                       color: Theme.of(context).colorScheme.onPrimary),
                 )
               ],
@@ -73,14 +73,12 @@ class HomePage extends StatelessWidget {
                           physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
                           children: [
                             ExpansionTile(
-                                title: Text(
+                                title: const Text(
                                   '未完成',
-                                  style: GoogleFonts.notoSans(
-                                    textStyle: TextStyle(
-                                      fontSize: 18.sp,
-                                      fontWeight: FontWeight.w500,
-                                      height: 1.5,
-                                    ),
+                                  style:TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w500,
+                                    height: 1.5,
                                   ),
                                 ),
                                 initiallyExpanded: true,
@@ -106,12 +104,10 @@ class HomePage extends StatelessWidget {
                             ExpansionTile(
                                 title: Text(
                                   '今日已完成',
-                                  style: GoogleFonts.notoSans(
-                                    textStyle: TextStyle(
-                                      fontSize: 18.sp,
-                                      fontWeight: FontWeight.w500,
-                                      height: 1.5,
-                                    ),
+                                  style: TextStyle(
+                                    fontSize: 18.sp,
+                                    fontWeight: FontWeight.w500,
+                                    height: 1.5,
                                   ),
                                 ),
                                 initiallyExpanded: true,
